@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 const EachCoffee = ({ coffee, cart, setCart }) => {
-  console.log(cart);
   const [coff, setCoff] = useState(coffee.variants[0]);
   const selectVariant = (e) => {
     const id = e.target.value;

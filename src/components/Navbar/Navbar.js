@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ cart }) => {
+  // Calculating total ordered quantity
+  let quantity = 0;
+  cart.forEach((ci) => {
+    quantity = quantity + ci.quantity;
+  });
+
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
@@ -35,7 +41,7 @@ const Navbar = () => {
                 />
               </svg>
               <span className="badge badge-sm indicator-item bg-red-600">
-                0
+                {quantity}
               </span>
             </div>
           </Link>

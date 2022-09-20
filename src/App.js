@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App max-w-7xl mx-auto">
-      <Navbar />
+      <Navbar cart={cart} />
       <Routes>
         <Route path="/" element={<Coffee />} />
         <Route
