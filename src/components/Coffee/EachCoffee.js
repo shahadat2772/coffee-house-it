@@ -25,7 +25,7 @@ const EachCoffee = ({ coffee, cart, setCart }) => {
   return (
     <div className="card card-compact w-72 bg-base-100 shadow-xl">
       <figure>
-        <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
+        <img className="w-[770px] h-[200px]" src={coff.img} alt="Shoes" />
       </figure>
       <div className="card-body">
         <div className="flex justify-between">
