@@ -2,6 +2,27 @@ import React from "react";
 
 const Cart = ({ cart, setCart }) => {
   console.log(cart);
+
+  const increaseQuant = (id) => {
+    const oldItem = cart.filter((i) => i.id == id)[0];
+    const lastItem = { ...oldItem, quantity: oldItem.quantity + 1 };
+    const updatedCart = cart.filter((cartItem) => cartItem.id != id);
+    setCart([...updatedCart, lastItem]);
+  };
+
+  const decreaseQuant = (id) => {
+    const oldItem = cart.filter((i) => i.id == id)[0];
+    let updatedCart = [];
+    if (oldItem.quantity == 1) {
+      updatedCart = cart.filter((cartItem) => cartItem.id != id);
+      setCart([...updatedCart]);
+    } else {
+      const lastItem = { ...oldItem, quantity: oldItem.quantity - 1 };
+      updatedCart = cart.filter((cartItem) => cartItem.id != id);
+      setCart([...updatedCart, lastItem]);
+    }
+  };
+
   return (
     <div>
       <div className="overflow-x-auto max-w-3xl mx-auto mt-6 max-h-[300px]">
@@ -37,11 +58,17 @@ const Cart = ({ cart, setCart }) => {
                 </td>
                 <td className="text-base text-center">${item.price}</td>
                 <td className="text-center text-base">
-                  <button className="text-lg text-primary hover:text-secondary duration-300">
+                  <button
+                    onClick={() => decreaseQuant(item.id)}
+                    className="text-lg text-primary hover:text-secondary duration-300"
+                  >
                     <i class="fa-solid fa-circle-minus"></i>
                   </button>
                   <span className="border px-2 mx-2">{item.quantity}</span>
-                  <button className="text-lg text-primary hover:text-secondary duration-300">
+                  <button
+                    onClick={() => increaseQuant(item.id)}
+                    className="text-lg text-primary hover:text-secondary duration-300"
+                  >
                     <i class="fa-solid fa-circle-plus"></i>
                   </button>
                 </td>
