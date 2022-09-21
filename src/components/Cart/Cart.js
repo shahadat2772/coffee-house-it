@@ -76,7 +76,7 @@ const Cart = ({ cart, setCart }) => {
                       onClick={() => decreaseQuant(item.id)}
                       className="block text-lg text-primary hover:text-secondary duration-300"
                     >
-                      <i class="fa-solid fa-circle-minus"></i>
+                      <i className="fa-solid fa-circle-minus"></i>
                     </button>
                     <span className="block border px-2 mx-2">
                       {item.quantity}
@@ -85,7 +85,7 @@ const Cart = ({ cart, setCart }) => {
                       onClick={() => increaseQuant(item.id)}
                       className="block text-lg text-primary hover:text-secondary duration-300"
                     >
-                      <i class="fa-solid fa-circle-plus"></i>
+                      <i className="fa-solid fa-circle-plus"></i>
                     </button>
                   </div>
                 </td>
@@ -94,7 +94,7 @@ const Cart = ({ cart, setCart }) => {
                     onClick={() => removeFromCart(item.id)}
                     className="text-lg"
                   >
-                    <i class="fa-regular fa-trash-can"></i>
+                    <i className="fa-regular fa-trash-can"></i>
                   </button>
                 </td>
                 <td className="text-lg text-center">

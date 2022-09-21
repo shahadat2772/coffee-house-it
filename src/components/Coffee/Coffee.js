@@ -42,7 +42,7 @@ const Coffee = ({ cart, setCart }) => {
   return (
     <div className="">
       {/* Coffees container */}
-      <div className="coffeesContainer  lg:grid-cols-3 md:grid grid-cols-3 justify-items-center md:max-w-5xl mx-auto mt-20">
+      <div className="coffeesContainer grid grid-cols-1 gap-y-10 lg:grid-cols-3  md:grid-cols-3 justify-items-center md:max-w-5xl mx-auto mt-20">
         {coffees.map((coffee) => (
           <EachCoffee cart={cart} setCart={setCart} coffee={coffee} />
         ))}

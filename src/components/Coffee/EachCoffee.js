@@ -22,9 +22,9 @@ const EachCoffee = ({ coffee, cart, setCart }) => {
   };
 
   return (
-    <div className="card card-compact w-72 bg-base-100 shadow-xl">
+    <div className="card card-compact w-72 bg-base-100 shadow">
       <figure>
-        <img className="w-[770px] h-[200px]" src={coff.img} alt="Shoes" />
+        <img className="md:w-[770px] lg:h-[200px]" src={coff.img} alt="Shoes" />
       </figure>
       <div className="card-body">
         <div className="flex justify-between">
