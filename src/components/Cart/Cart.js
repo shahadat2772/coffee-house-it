@@ -23,6 +23,12 @@ const Cart = ({ cart, setCart }) => {
     }
   };
 
+  const removeFromCart = (id) => {
+    let updatedCart = [];
+    updatedCart = cart.filter((cartItem) => cartItem.id != id);
+    setCart([...updatedCart]);
+  };
+
   return (
     <div>
       <div className="overflow-x-auto max-w-3xl mx-auto mt-6 max-h-[300px]">
@@ -73,7 +79,10 @@ const Cart = ({ cart, setCart }) => {
                   </button>
                 </td>
                 <td className="text-center">
-                  <button className="text-lg">
+                  <button
+                    onClick={() => removeFromCart(item.id)}
+                    className="text-lg"
+                  >
                     <i class="fa-regular fa-trash-can"></i>
                   </button>
                 </td>
