@@ -27,6 +27,15 @@ const Cart = ({ cart, setCart }) => {
     setCart([...updatedCart]);
   };
 
+  let qty = 0;
+  let subTotal = 0;
+  cart.forEach((item) => {
+    qty = qty + item.quantity;
+    subTotal = subTotal + item.quantity * item.price;
+  });
+  let tax = Number((subTotal * 0.01).toFixed(2));
+  let total = Number((subTotal + tax).toFixed(2));
+
   return (
     <div>
       <div className="overflow-x-scroll max-w-3xl mx-auto mt-6 max-h-[300px]">
@@ -95,6 +104,18 @@ const Cart = ({ cart, setCart }) => {
             ))}
           </tbody>
         </table>
+      </div>
+      {/* Calculation and proceed */}
+      <div className="max-w-3xl mx-auto">
+        <section className="mt-5 grid md:grid-cols-4 grid-cols-2 overflow-x-auto">
+          <article className="py-2 px-4 border">Qty: ${qty}</article>
+          <article className="py-2 px-4 border">Sub Total: ${subTotal}</article>
+          <article className="py-2 px-4 border">Tax: ${tax}</article>
+          <article className="py-2 px-4 border">Total: ${total}</article>
+        </section>
+        <button className="btn btn-sm btn-secondary block ml-auto mt-6">
+          Proceed to checkout
+        </button>
       </div>
     </div>
   );
