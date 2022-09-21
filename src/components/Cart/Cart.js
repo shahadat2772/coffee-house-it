@@ -29,7 +29,7 @@ const Cart = ({ cart, setCart }) => {
 
   return (
     <div>
-      <div className="overflow-x-auto max-w-3xl mx-auto mt-6 max-h-[300px]">
+      <div className="overflow-x-scroll max-w-3xl mx-auto mt-6 max-h-[300px]">
         <table className="table-compact w-full">
           {/* <!-- head --> */}
           <thead className="border-b">
@@ -61,20 +61,24 @@ const Cart = ({ cart, setCart }) => {
                   </div>
                 </td>
                 <td className="text-base text-center">${item.price}</td>
-                <td className="text-center text-base">
-                  <button
-                    onClick={() => decreaseQuant(item.id)}
-                    className="text-lg text-primary hover:text-secondary duration-300"
-                  >
-                    <i class="fa-solid fa-circle-minus"></i>
-                  </button>
-                  <span className="border px-2 mx-2">{item.quantity}</span>
-                  <button
-                    onClick={() => increaseQuant(item.id)}
-                    className="text-lg text-primary hover:text-secondary duration-300"
-                  >
-                    <i class="fa-solid fa-circle-plus"></i>
-                  </button>
+                <td className="text-base">
+                  <div className="flex justify-center">
+                    <button
+                      onClick={() => decreaseQuant(item.id)}
+                      className="block text-lg text-primary hover:text-secondary duration-300"
+                    >
+                      <i class="fa-solid fa-circle-minus"></i>
+                    </button>
+                    <span className="block border px-2 mx-2">
+                      {item.quantity}
+                    </span>
+                    <button
+                      onClick={() => increaseQuant(item.id)}
+                      className="block text-lg text-primary hover:text-secondary duration-300"
+                    >
+                      <i class="fa-solid fa-circle-plus"></i>
+                    </button>
+                  </div>
                 </td>
                 <td className="text-center">
                   <button
