@@ -1,8 +1,6 @@
 import React from "react";
 
 const Cart = ({ cart, setCart }) => {
-  console.log(cart);
-
   const increaseQuant = (id) => {
     const oldItem = cart.filter((i) => i.id == id)[0];
     const lastItem = { ...oldItem, quantity: oldItem.quantity + 1 };
